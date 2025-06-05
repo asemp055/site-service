@@ -1,5 +1,4 @@
-/* Services.css */
-
+/* Styles pour la section services */
 .services-section {
     padding: 5rem 1rem;
     background-color: var(--cream);
@@ -131,7 +130,7 @@
     .services-section {
         padding: 3rem 1rem;
     }
-
+    
     .services-grid {
         gap: 1.5rem;
     }

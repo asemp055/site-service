@@ -5,35 +5,19 @@ import { gsap } from 'gsap';
 
 const Home = () => {
   useEffect(() => {
-    gsap.from('.hero h1', {
-      duration: 1,
-      y: 50,
-      opacity: 0,
-      ease: 'power3.out'
-    });
+  const bookingBtn = document.querySelector('.open-booking');
+  const handleClick = () => console.log('Ouverture du formulaire de RDV');
 
-    gsap.from('.hero-content', {
-      duration: 1.5,
-      y: 50,
-      opacity: 0,
-      ease: 'power3.out',
-      stagger: 0.2
-    });
+  if (bookingBtn) {
+    bookingBtn.addEventListener('click', handleClick);
+  }
 
-    const bookingBtn = document.querySelector('.open-booking');
+  return () => {
     if (bookingBtn) {
-      bookingBtn.addEventListener('click', () => {
-        console.log('Ouverture du formulaire de RDV');
-        // TODO: Connecter à BookingModal si nécessaire
-      });
+      bookingBtn.removeEventListener('click', handleClick);
     }
-
-    return () => {
-      if (bookingBtn) {
-        bookingBtn.removeEventListener('click', () => {});
-      }
-    };
-  }, []);
+  };
+}, []);
 
   return (
     <main className="home-page">
