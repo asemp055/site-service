@@ -1,0 +1,139 @@
+/* Team Section */
+.team-section {
+    padding: 5rem 2rem;
+    background-color: #F8F1E5; /* Crème */
+    text-align: center;
+}
+
+.team-section h2 {
+    color: #5E3023; /* Terre */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: #8C2F39; /* Bordeaux */
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.member-image {
+    height: 250px;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Style de repli si l'image ne charge pas */
+.member-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #5E3023 0%, #D4AF37 100%);
+    z-index: 1;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.5s ease;
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.05);
+}
+
+.member-info {
+    padding: 1.5rem;
+}
+
+.member-info h3 {
+    color: #5E3023;
+    margin-bottom: 0.5rem;
+}
+
+.member-specialty {
+    color: #D4AF37; /* Or */
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.select-btn {
+    background-color: #5E3023;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.select-btn:hover {
+    background-color: #8C2F39;
+}
+
+/* Modal de confirmation */
+/* Modale de sélection de coiffeuse */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+}
+
+/* Modale de réservation principale */
+.booking-modal {
+    position: fixed;
+    /* ... (votre style existant) ... */
+    z-index: 1001; /* Plus élevé que la modale de sélection */
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+}
