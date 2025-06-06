@@ -6,7 +6,10 @@ const Header = () => {
   return (
     <header className="header">
       <nav className="navbar">
-        <div className="logo">Madri Braids</div>
+        <div className="logo">
+             <span>Madri Braids</span>
+             </div>
+
         <ul className="nav-links">
           <li><a href="/">Accueil</a></li>
           <li><a href="#services">Services</a></li>
