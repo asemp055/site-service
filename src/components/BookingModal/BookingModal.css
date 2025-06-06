@@ -1,30 +1,34 @@
-/* Styles pour le modal de réservation */
 .booking-modal {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.7);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    padding: 1rem;
+    overflow-y: auto;
 }
 
 .modal-content {
     background-color: var(--cream);
-    padding: 2rem;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 500px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
     position: relative;
     border: 2px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .close-btn {
     position: absolute;
-    top: 1rem;
+    top: 0.8rem;
     right: 1rem;
     font-size: 1.5rem;
     cursor: pointer;
@@ -32,33 +36,35 @@
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     color: var(--burgundy);
 }
 
-.form-group select, 
+.form-group select,
 .form-group input {
     width: 100%;
-    padding: 0.8rem;
+    padding: 0.7rem;
     border: 1px solid var(--gold);
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 0.95rem;
 }
 
 .btn-submit {
     background-color: var(--burgundy);
     color: white;
     border: none;
-    padding: 1rem 2rem;
-    border-radius: 5px;
+    padding: 0.9rem 1.5rem;
+    border-radius: 6px;
     cursor: pointer;
     width: 100%;
     font-size: 1rem;
     transition: background-color 0.3s;
+    margin-top: 1rem;
 }
 
 .btn-submit:hover {

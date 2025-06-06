@@ -1,3 +1,10 @@
+:root {
+    --gold: #D4AF37;
+    --earth: #8B4513;
+    --burgundy: #800020;
+    --dark-brown: #5D4037;
+    --cream: #FFF8E1;
+}
 .App {
   text-align: center;
 }
@@ -35,4 +42,6 @@
   to {
     transform: rotate(360deg);
   }
+  
+
 }

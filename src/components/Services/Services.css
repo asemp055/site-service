@@ -1,4 +1,4 @@
-/* Styles pour la section services */
+/* Section services */
 .services-section {
     padding: 5rem 1rem;
     background-color: var(--cream);
@@ -28,7 +28,7 @@
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     background: white;
-    box-shadow: 0 4px 8px rgba(93, 64, 55, 0.1);
+    box-shadow: 0 4px 8px rgba(93, 64, 55, 0.1); /* dark-brown ombre */
     position: relative;
 }
 
@@ -80,7 +80,7 @@
     margin: 0 1.5rem 1.5rem;
     display: inline-block;
     padding: 0.3rem 0.8rem;
-    background-color: rgba(212, 175, 55, 0.1);
+    background-color: rgba(212, 175, 55, 0.1); /* or use var with transparency */
     border-radius: 20px;
 }
 
@@ -120,7 +120,7 @@
 }
 
 .service-card .btn-cancel:hover {
-    background-color: rgba(128, 0, 32, 0.1);
+    background-color: rgba(128, 0, 32, 0.1); /* transparence du bordeaux */
     color: var(--burgundy);
     border-color: var(--burgundy);
 }

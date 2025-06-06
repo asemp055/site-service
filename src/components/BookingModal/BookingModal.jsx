@@ -1,39 +1,52 @@
 import React, { useState } from 'react';
-import './BookingModal.css'; // Assure-toi que ce fichier contient le CSS que tu as donné
+import './BookingModal.css'; // si tu as un fichier de styles
 
 const BookingModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    service: '',
-    date: '',
-    time: '',
-    coiffeuse: ''
+    serviceType: '',
+    appointmentDate: '',
+    appointmentTime: '',
+    coiffeuse: '',
+    clientName: '',
+    phoneNumber: '',
   });
 
   const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, phone, service, date, time, coiffeuse } = formData;
 
-    alert(
-      `🎉 Réservation confirmée !\n\n👤 Nom : ${name}\n📞 Téléphone : ${phone}\n✅ Service : ${service}\n📅 Date : ${date}\n🕒 Heure : ${time}\n💇🏽‍♀️ Coiffeuse : ${coiffeuse}`
-    );
+    const {
+      serviceType,
+      appointmentDate,
+      appointmentTime,
+      coiffeuse,
+      clientName,
+      phoneNumber,
+    } = formData;
 
+    alert(`🎉 Réservation confirmée !
+✅ Service : ${serviceType}
+📅 Date : ${appointmentDate}
+🕒 Heure : ${appointmentTime}
+💇🏽‍♀️ Coiffeuse : ${coiffeuse}
+👤 Client : ${clientName}
+📞 Téléphone : ${phoneNumber}`);
+
+    onClose(); // Fermer le modal
     setFormData({
-      name: '',
-      phone: '',
-      service: '',
-      date: '',
-      time: '',
-      coiffeuse: ''
+      serviceType: '',
+      appointmentDate: '',
+      appointmentTime: '',
+      coiffeuse: '',
+      clientName: '',
+      phoneNumber: '',
     });
-
-    onClose(); // Ferme la modale après soumission
   };
 
   if (!isOpen) return null;
@@ -44,56 +57,65 @@ const BookingModal = ({ isOpen, onClose }) => {
         <span className="close-btn" onClick={onClose}>&times;</span>
         <h2>Réserver une Création Capillaire</h2>
         <form onSubmit={handleSubmit}>
+
           <div className="form-group">
-            <label htmlFor="name">Votre nom :</label>
+            <label htmlFor="clientName">Nom :</label>
             <input
               type="text"
-              id="name"
-              value={formData.name}
-              onChange={handleChange}
+              id="clientName"
               required
-              placeholder="Nom complet"
+              value={formData.clientName}
+              onChange={handleChange}
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="phone">Numéro de téléphone :</label>
+            <label htmlFor="phoneNumber">Téléphone :</label>
             <input
               type="tel"
-              id="phone"
-              value={formData.phone}
-              onChange={handleChange}
+              id="phoneNumber"
               required
-              placeholder="Ex : 514-123-4567"
+              value={formData.phoneNumber}
+              onChange={handleChange}
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="service">Type de Service :</label>
-            <select id="service" value={formData.service} onChange={handleChange} required>
+            <label htmlFor="serviceType">Type de Service :</label>
+            <select
+              id="serviceType"
+              required
+              value={formData.serviceType}
+              onChange={handleChange}
+            >
               <option value="">Choisissez votre style</option>
-              <option value="Box Braids">Box Braids</option>
-              <option value="Fulani Braids">Fulani Braids</option>
-              <option value="Vanilles/Twists">Vanilles/Twists</option>
-              <option value="Dreads">Dreads</option>
-              <option value="Accessoires">Pose d'Accessoires</option>
+              <option value="box-braids">Box Braids</option>
+              <option value="fulani">Fulani Braids</option>
+              <option value="vanilles">Vanilles/Twists</option>
+              <option value="dreads">Dreads</option>
+              <option value="accessoires">Pose d'Accessoires</option>
             </select>
           </div>
 
           <div className="form-group">
-            <label htmlFor="date">Date :</label>
+            <label htmlFor="appointmentDate">Date :</label>
             <input
               type="date"
-              id="date"
-              value={formData.date}
-              onChange={handleChange}
+              id="appointmentDate"
               required
+              value={formData.appointmentDate}
+              onChange={handleChange}
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="time">Heure :</label>
-            <select id="time" value={formData.time} onChange={handleChange} required>
+            <label htmlFor="appointmentTime">Heure :</label>
+            <select
+              id="appointmentTime"
+              required
+              value={formData.appointmentTime}
+              onChange={handleChange}
+            >
               <option value="">Sélectionnez une heure</option>
               <option value="09:00">9:00 AM</option>
               <option value="11:00">11:00 AM</option>
@@ -104,7 +126,12 @@ const BookingModal = ({ isOpen, onClose }) => {
 
           <div className="form-group">
             <label htmlFor="coiffeuse">Coiffeuse :</label>
-            <select id="coiffeuse" value={formData.coiffeuse} onChange={handleChange} required>
+            <select
+              id="coiffeuse"
+              required
+              value={formData.coiffeuse}
+              onChange={handleChange}
+            >
               <option value="">Choisissez votre coiffeuse</option>
               <option value="Marie Haby">Marie Haby</option>
               <option value="Adriane">Adriane</option>

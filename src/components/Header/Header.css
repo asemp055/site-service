@@ -1,14 +1,18 @@
 /* src/components/Header.css */
 
+/* src/components/Header/Header.css */
 .header {
-  position: fixed;
+  position: sticky; /* Changez fixed en sticky */
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(94, 48, 35, 0.9); /* terre foncée semi-transparente */
+  background-color: rgba(94, 48, 35, 0.9);
   padding: 1rem 2rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px); /* Effet de flou optionnel */
 }
+
+
 
 .navbar {
   display: flex;

@@ -1,15 +1,19 @@
 /* Hero Section - Version Full Background */
 .hero {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-image: url('/public/assets/images/hero-background.png');
-    text-align: center;
-    padding: 0 20px;
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-image: url('/public/assets/images/hero-background.png'); /* ✅ PAS besoin de /public dans React */
+  background-size: cover;             /* ✅ couvre tout l'écran */
+  background-position: center center; /* ✅ centre l'image */
+  background-repeat: no-repeat;       /* ✅ évite les répétitions */
+  background-attachment: fixed;       /* ✅ optionnel pour effet parallax */
+  text-align: center;
+  padding: 0 20px;
 }
 
 .hero-overlay {
