@@ -2,17 +2,21 @@
 import React from 'react';
 import './Header.css';
 
-const Header = () => {
+const Header = ({ onBook }) => {
   return (
     <header className="header">
       <nav className="navbar">
-        <div className="logo">Madri Braids</div>
+        <div className="logo">
+          <img src="/assets/images/logoM.png" alt="Madri Braids Logo" />
+          <span className="logo-text">Madri Braids</span>
+          </div>
+
         <ul className="nav-links">
           <li><a href="/">Accueil</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#team">Équipe</a></li>
           <li><a href="#about">À propos</a></li>
-          <li><button className="btn-book">Prendre RDV</button></li>
+          <li><button className="btn-book" onClick={onBook}>Prendre RDV</button></li>
         </ul>
       </nav>
     </header>

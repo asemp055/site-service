@@ -103,37 +103,65 @@
 /* Modal de confirmation */
 /* Modale de sélection de coiffeuse */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.7);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-overlay .modal-content {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    max-width: 500px;
-    width: 90%;
-}
-
-/* Modale de réservation principale */
-.booking-modal {
-    position: fixed;
-    /* ... (votre style existant) ... */
-    z-index: 1001; /* Plus élevé que la modale de sélection */
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .modal-content {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 500px;
-    text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: relative;
 }
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #8C2F39;
+}
+
+.btn {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-gold {
+  background-color: #D4AF37;
+  color: #5E3023;
+}
+
+.btn-transparent {
+  background: transparent;
+  color: #5E3023;
+  border: 2px solid #D4AF37;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.modal-actions .btn {
+  width: 70%;           /* Aligné avec la largeur du texte */
+  max-width: 320px;     /* Ne dépasse pas trop */
+}
+
