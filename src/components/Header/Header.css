@@ -46,12 +46,14 @@
   color: #D4AF37;
   font-weight: bold;
   font-size: 2rem;
-  isplay: flex;
+  display: flex;
   align-items: center;
 }
 .logo img {
   height: 60px;
   object-fit: contain;
+  filter: brightness(1.95) contrast(1);
+  gap: 0.75rem
 }
 
 .btn-book {
