@@ -16,17 +16,16 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      
+     <Header onBook={openBooking} />
 
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Home />
+              <Home onBook={openBooking} />
               <Services onBook={openBooking} />
-              <Team />
+              <Team onBook={openBooking} />
               <About />
             </>
           }
