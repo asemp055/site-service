@@ -1,6 +1,7 @@
 // src/components/Team/Team.jsx
 import React, { useState } from 'react';
 import './Team.css';
+import TeamBookingModal from '../BookingModal/TeamBookingModal'; // attention au bon chemin
 
 const teamData = [
   {
@@ -25,20 +26,22 @@ const teamData = [
 
 const Team = ({ onBook }) => {
   const [showModal, setShowModal] = useState(false);
-  const [selectedStylist, setSelectedStylist] = useState('');
+  const [selectedStylist, setSelectedStylist] = useState(null);
 
-  const openModal = (name) => {
-    console.log("openModal déclenché pour :", name); // test debug
-    setSelectedStylist(name);
+  const openModal = (stylist) => {
+    setSelectedStylist(stylist);
     setShowModal(true);
   };
 
   const handleConfirm = () => {
     setShowModal(false);
-    onBook?.(); // déclenche BookingModal
+    onBook?.(); // déclenche BookingModal global si besoin
   };
 
-  const handleCancel = () => setShowModal(false);
+  const handleCancel = () => {
+    setShowModal(false);
+    setSelectedStylist(null);
+  };
 
   return (
     <section className="team-section" id="team">
@@ -55,26 +58,22 @@ const Team = ({ onBook }) => {
               <h3>{member.name}</h3>
               <span className="member-specialty">{member.specialty}</span>
               <p>{member.bio}</p>
-              <button className="select-btn" onClick={() => openModal(member.name)}>Sélectionner</button>
+              <button className="select-btn" onClick={() => openModal(member)}>
+                Sélectionner
+              </button>
             </div>
           </div>
         ))}
       </div>
 
+      {/* Team-specific booking modal */}
       {showModal && (
-        <div className="modal-overlay" onClick={(e) => {
-          if (e.target.classList.contains('modal-overlay')) handleCancel();
-        }}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <span className="close-btn" onClick={handleCancel}>&times;</span>
-            <h3>Confirmer votre choix</h3>
-            <p>Vous avez sélectionné <strong>{selectedStylist}</strong> pour votre prochain RDV.<br />Souhaitez-vous continuer vers la réservation ?</p>
-            <div className="modal-actions">
-              <button className="btn btn-gold" onClick={handleConfirm}>Prendre RDV</button>
-              <button className="btn btn-transparent" onClick={handleCancel}>Annuler</button>
-              </div>
-          </div>
-        </div>
+        <TeamBookingModal
+          isOpen={showModal}
+          stylist={selectedStylist}
+          onClose={handleCancel}
+          onCancel={handleCancel}
+        />
       )}
     </section>
   );
