@@ -1,23 +1,10 @@
 // src/pages/Home.jsx
-import React, { useEffect } from 'react';
+import React from 'react';
 import './Home.css';
 
-const Home = ({ onBook })  => {
-  useEffect(() => {
-  const bookingBtn = document.querySelector('.open-booking');
-  const handleClick = () => console.log('Ouverture du formulaire de RDV');
-
-  if (bookingBtn) {
-    bookingBtn.addEventListener('click', handleClick);
-  }
-
-  return () => {
-    if (bookingBtn) {
-      bookingBtn.removeEventListener('click', handleClick);
-    }
-  };
-}, []);
-
+const Home = ({ onBook }) => {
+  
+  
   return (
     <main className="home-page">
       <section className="hero">

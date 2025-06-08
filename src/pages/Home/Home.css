@@ -1,106 +1,94 @@
-/* Hero Section - Version Full Background */
+/* src/pages/Home.css */
+
+/* Base Styles */
+.home-page {
+  overflow-x: hidden;
+}
+
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 600px;
+  min-height: 500px; /* Réduit pour mobile */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  background-image: url('/public/assets/images/hero-background.png'); /* ✅ PAS besoin de /public dans React */
-  background-size: cover;             /* ✅ couvre tout l'écran */
-  background-position: center center; /* ✅ centre l'image */
-  background-repeat: no-repeat;       /* ✅ évite les répétitions */
-  background-attachment: fixed;       /* ✅ optionnel pour effet parallax */
+  background: url('/public/assets/images/hero-background.png') center/cover no-repeat;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 1rem; /* Padding réduit pour mobile */
 }
 
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-color: rgba(94, 48, 35, 0.4); /* Couleur terre avec transparence */
-    mix-blend-mode: multiply;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(94, 48, 35, 0.4);
+  mix-blend-mode: multiply;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  width: 90%; /* Prend 90% de largeur sur mobile */
+  padding: 0 1rem;
 }
 
+/* Typographie Responsive */
 .hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    line-height: 1.2;
-    color: #F8F1E5; /* Crème */
+  font-size: clamp(2rem, 5vw, 4rem); /* Taille plus progressive */
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .subtitle {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    margin-bottom: 2.5rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    color: #D4AF37; /* Or */
-    letter-spacing: 1px;
+  font-size: clamp(0.9rem, 3vw, 1.3rem);
+  margin-bottom: 2rem;
 }
 
+/* Boutons */
 .cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btn {
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-    border: 2px solid transparent;
+  padding: 0.8rem 1.5rem;
+  font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
-.btn-gold {
-    background-color: #D4AF37; /* Or */
-    color: #5E3023; /* Terre */
-}
-
-.btn-transparent {
-    background-color: transparent;
-    color: #F8F1E5; /* Crème */
-    border-color: #D4AF37; /* Or */
-}
-
-.btn-gold:hover {
-    background-color: #F8F1E5; /* Crème */
-    transform: translateY(-3px);
-}
-
-.btn-transparent:hover {
-    background-color: rgba(212, 175, 55, 0.2); /* Or avec transparence */
-}
-
-/* Responsive Mobile */
+/* Mobile Breakpoint */
 @media (max-width: 768px) {
-    .hero {
-        min-height: 500px;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .btn {
-        width: 100%;
-        max-width: 250px;
-    }
+  .hero {
+    height: auto;
+    aspect-ratio: 9/16; /* Meilleur ratio pour mobile */
+    min-height: auto;
+    padding: 2rem 0;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* Petit mobile */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
 }

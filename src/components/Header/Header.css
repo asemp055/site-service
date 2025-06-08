@@ -80,6 +80,7 @@
   font-weight: bold;
 }
 
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -89,5 +90,50 @@
     margin-top: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+/* ... (gardez vos styles existants) ... */
+
+/* Bouton Hamburger (caché par défaut) */
+.hamburger-btn {
+  display: none; /* Caché en desktop */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Styles pour mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row; /* Garde le logo et le bouton alignés */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Affiche le bouton hamburger en mobile */
+  .hamburger-btn {
+    display: block;
+  }
+
+  /* Cache les liens par défaut et les affiche quand le menu est ouvert */
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Ajuste le bouton "Prendre RDV" */
+  .btn-book {
+    width: 100%;
+    text-align: center;
   }
 }
