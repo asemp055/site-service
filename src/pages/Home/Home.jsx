@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import './Home.css';
 
-const Home = () => {
+const Home = ({ onBook })  => {
   useEffect(() => {
   const bookingBtn = document.querySelector('.open-booking');
   const handleClick = () => console.log('Ouverture du formulaire de RDV');
@@ -27,7 +27,7 @@ const Home = () => {
           <p className="subtitle">SALON COMPLET | TRESSES AFRICAINES | SOINS CAPILLAIRES</p>
           <div className="cta-buttons">
             <a href="#services" className="btn btn-gold">Nos Services</a>
-            <button className="btn btn-transparent open-booking">Prendre RDV</button>
+            <button className="btn btn-transparent" onClick={onBook}>Prendre RDV</button>
           </div>
         </div>
       </section>
