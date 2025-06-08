@@ -33,10 +33,10 @@ const Team = ({ onBook }) => {
     setShowModal(true);
   };
 
-  const handleConfirm = () => {
+ /* const handleConfirm = () => {
     setShowModal(false);
     onBook?.(); // déclenche BookingModal global si besoin
-  };
+  };*/
 
   const handleCancel = () => {
     setShowModal(false);
