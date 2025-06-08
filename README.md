@@ -1,3 +1,8 @@
+# Madri Braids - Coiffures Afro
+
+> [Voir la documentation complète du projet ici](docs/README_PROJECT.md)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
