@@ -1,7 +1,6 @@
 // src/pages/Home.jsx
 import React, { useEffect } from 'react';
 import './Home.css';
-import { gsap } from 'gsap';
 
 const Home = () => {
   useEffect(() => {
