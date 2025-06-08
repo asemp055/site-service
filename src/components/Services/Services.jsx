@@ -1,5 +1,5 @@
 import React from 'react';
-import './Services.css'; // si tu as un fichier CSS spécifique
+import './Services.css'; 
 
 const Services = ({ onBook }) => {
   return (

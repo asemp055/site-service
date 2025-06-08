@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './BookingModal.css'; // si tu as un fichier de styles
+import './BookingModal.css'; 
 
 const BookingModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({

@@ -1,7 +1,7 @@
 // src/components/Team/Team.jsx
 import React, { useState } from 'react';
 import './Team.css';
-import TeamBookingModal from '../BookingModal/TeamBookingModal'; // attention au bon chemin
+import TeamBookingModal from '../BookingModal/TeamBookingModal'; 
 
 const teamData = [
   {
