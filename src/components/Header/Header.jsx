@@ -11,6 +11,8 @@ const Header = ({ onBook }) => {
           <span className="logo-text">Madri Braids</span>
           </div>
 
+            
+
         <ul className="nav-links">
           <li><a href="/">Accueil</a></li>
           <li><a href="#services">Services</a></li>
